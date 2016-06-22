@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Robotix-Competitions</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/robotix.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- jQuery -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+
+
+$(document).ready(function () {
+    //Set default open/close settings
+    var divs=$('.accordion>div').hide(); //Hide/close all containers
+
+    var h2s=$('.accordion>h2').click(function () {
+        h2s.not(this).removeClass('active')
+        $(this).toggleClass('active')
+        divs.not($(this).next()).slideUp()
+        $(this).next().slideToggle()
+        return false; //Prevent the browser jump to the link anchor
+
+    });
+	
+	// set the date we're counting down to
+var target_date = new Date('apr, 15, 2015').getTime();
+ 
+// variables for time units
+var days, hours, minutes, seconds;
+ 
+// get tag element
+var countdown = document.getElementById('countdown');
+ 
+// update the tag with id "countdown" every 1 second
+setInterval(function () {
+ 
+    // find the amount of "seconds" between now and target
+    var current_date = new Date().getTime();
+    var seconds_left = (target_date - current_date) / 1000;
+ 
+    // do some time calculations
+    days = parseInt(seconds_left / 86400);
+    seconds_left = seconds_left % 86400;
+     
+    hours = parseInt(seconds_left / 3600);
+    seconds_left = seconds_left % 3600;
+     
+    minutes = parseInt(seconds_left / 60);
+    seconds = parseInt(seconds_left % 60);
+     
+    // format countdown string + set tag value
+    countdown.innerHTML = '<span class="days">' + days +  ' <b>Days</b></span> <span class="hours">' + hours + ' <b>Hours</b></span> <span class="minutes">'
+    + minutes + ' <b>Minutes</b></span> <span class="seconds">' + seconds + ' <b>Seconds</b></span>';  
+ 
+}, 1000);
+
+
+});
+	</script>
+	
+	
+	
+	
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Warrior Robotix</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+					<li>
+                        <a href="index.html#bottom" id="top">Intro</a>
+                    </li>
+                    <li class="active">
+                        <a href="competitions.html">Competitions</a>
+                    </li>
+                    <li>
+                        <a href="skills.html">Skills</a>
+                    </li>
+					<li>
+                        <a href="vex.html">VEX</a>
+                    </li>
+					<li>
+                        <a href="other.html">Other</a>
+                    </li>
+					<li>
+                        <a href="sponsers.html">Sponsors</a>
+                    </li>
+					<li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+					<li>
+                        <a href="LoginSystem/login.html">login</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Competitions
+                    <small>Upcoming & Past Events </small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Competitions</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+		
+		<!-- slider Row -->
+		<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		
+		<div class="well">
+		<div class="counter">
+		<h2>Estimated Time Remaining Before VEX Worlds Kentucky:</h2>
+		<div id="countdown">
+		  
+		</div><!-- /#Countdown Div -->
+		</div> <!-- /.Counter Div -->
+		</div> <!-- /.Content Div -->
+		
+		</div> <!-- /.Columns Div -->
+		</div> <!-- /.Row Div -->
+		<div class="col-lg-12">
+								<h2 class="page-header">Achievements & Past Events List </h2>
+							</div>
+		 <div class="accordion">
+				<!-- main1 dropdown -->
+				<h2 class="acc_trigger"><a href="#"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> &nbsp&nbsp&nbsp 2014-2015</a></h2>
+					<div class="acc_container">
+					<h3>Toronto VRC Qualifying Event</h3>
+					<div class="msg msg-primary">Judges award </div>
+					<h3>New Market VRC Qualifying Event</h3>
+					<div class="msg msg-primary">Quarter Finalist</div>
+					<h3>St. Catherines VRC Qualifying Event</h3>
+					<div class="msg msg-primary">Tournament Champions, Think Award and  Programming Skills</div>
+					<h3>Rick Hansen VRC Qualifying Event</h3>
+					<div class="msg msg-primary">Tournament Champions, Excellence and Driver Skills</div>
+					<h3>St. Catherines VRC Worlds Qualifiers Event</h3>
+					<div class="msg msg-primary">Semi-Finalist & Innovate Award   </div>
+						
+					</div>
+					
+				<!-- main2 dropdown -->
+				<h2 class="acc_trigger"><a href="#"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> &nbsp&nbsp&nbsp 2013-2014</a></h2>
+				<!-- container -->
+					<div class="acc_container">
+					
+					<h3>Toronto VRC Qualifying Event</h3>
+					<h3>Castle Brook VRC Qualifying Event</h3>
+					<h3>Rick Hansen VRC Qualifying Event</h3>
+					<h3>Skills Peel</h3>
+					<div class="msg msg-primary"> First place in Virtual Robotic and Semi-Finalist in Skills Robotic  </div>
+					<h3>Skills Ontario</h3>
+					<div class="msg msg-primary"> First place in Virtual Robotic </div>
+						
+						
+				<!-- main2 dropdown end -->
+					</div>
+	
+				<!-- main3 dropdown -->
+				<h2 class="acc_trigger"><a href="#"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> &nbsp&nbsp&nbsp 2012-2013</a></h2>
+				
+				<div class="acc_container">
+					<h3>Skills Peel</h3>
+					<div class="msg msg-primary"> First place in Skills Robotic and First place in Virtual Robotic  </div>
+					<h3>Rick Hansen VRC Qualifying Event</h3>
+					<div class="msg msg-primary"> Quarter finalist</div>
+					<h3>Skills Ontario</h3>
+					<div class="msg msg-primary"> First place in Virtual Robotic and third place in Skills Robotic </div>
+						
+				</div>
+					
+			</div>
+				
+			
+		  
+        
+        
+        
+
+        <hr>
+
+<?php
+include_once('footer.html');
+?>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+
+</body>
+
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Robotix-Competitions</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/robotix.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- jQuery -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+
+
+$(document).ready(function () {
+    //Set default open/close settings
+    var divs=$('.accordion>div').hide(); //Hide/close all containers
+
+    var h2s=$('.accordion>h2').click(function () {
+        h2s.not(this).removeClass('active')
+        $(this).toggleClass('active')
+        divs.not($(this).next()).slideUp()
+        $(this).next().slideToggle()
+        return false; //Prevent the browser jump to the link anchor
+
+    });
+	
+	// set the date we're counting down to
+var target_date = new Date('apr, 15, 2015').getTime();
+ 
+// variables for time units
+var days, hours, minutes, seconds;
+ 
+// get tag element
+var countdown = document.getElementById('countdown');
+ 
+// update the tag with id "countdown" every 1 second
+setInterval(function () {
+ 
+    // find the amount of "seconds" between now and target
+    var current_date = new Date().getTime();
+    var seconds_left = (target_date - current_date) / 1000;
+ 
+    // do some time calculations
+    days = parseInt(seconds_left / 86400);
+    seconds_left = seconds_left % 86400;
+     
+    hours = parseInt(seconds_left / 3600);
+    seconds_left = seconds_left % 3600;
+     
+    minutes = parseInt(seconds_left / 60);
+    seconds = parseInt(seconds_left % 60);
+     
+    // format countdown string + set tag value
+    countdown.innerHTML = '<span class="days">' + days +  ' <b>Days</b></span> <span class="hours">' + hours + ' <b>Hours</b></span> <span class="minutes">'
+    + minutes + ' <b>Minutes</b></span> <span class="seconds">' + seconds + ' <b>Seconds</b></span>';  
+ 
+}, 1000);
+
+
+});
+	</script>
+	
+	
+	
+	
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Warrior Robotix</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="competitions.html">Competitions</a>
+                    </li>
+                    <li>
+                        <a href="skills.html">Skills</a>
+                    </li>
+					<li>
+                        <a href="vex.html">VEX</a>
+                    </li>
+					<li>
+                        <a href="other.html">Other</a>
+                    </li>
+					<li>
+                        <a href="sponsers.html">Sponsors</a>
+                    </li>
+					<li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+					<li>
+                        <a href="LoginSystem/login.html">login</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Competitions
+                    <small>Upcoming & Past Events </small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Competitions</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+		
+		<!-- slider Row -->
+		<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		
+		<div class="well">
+		<div class="counter">
+		<h2>Estimated Time Remaining Before VEX Worlds Kentucky:</h2>
+		<div id="countdown">
+		  
+		</div><!-- /#Countdown Div -->
+		</div> <!-- /.Counter Div -->
+		</div> <!-- /.Content Div -->
+		
+		</div> <!-- /.Columns Div -->
+		</div> <!-- /.Row Div -->
+		 <div class="accordion">
+				<!-- main1 dropdown -->
+				<h2 class="acc_trigger"><a href="#">2014-2015</a></h2>
+					<div class="acc_container">
+						
+						<!-- event1 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">Toronto VRC Qualifying Event</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/T_com_vex.jpg"  alt=""></div>
+										<div class="col-sm-6" >
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>was the first VEX tournament the Warriors A attended</dd>
+											  <dt>location:</dt>
+											  <dd>Sir willain morluc S.S. NewMarket, ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>fought hard and made it to quarter finals</dd>
+											  <dt>Teams that attended:</dt>
+											  <dd>4659 Warriors A</dd>
+											</dl>
+										</div>
+								
+										</div>
+		  
+								</details>
+  							</div>
+						</div>
+						<!-- event2 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">NewMarket VRC Qualifying Event</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/T_com_vex.jpg"  alt=""></div>
+										<div class="col-sm-6" >
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>was the first VEX tournament the Warriors A attended</dd>
+											  <dt>location:</dt>
+											  <dd>Sir willain morluc S.S. NewMarket, ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>fought hard and made it to quarter finals</dd>
+											  <dt>Teams that attended:</dt>
+											  <dd>4659 Warriors A</dd>
+											</dl>
+										</div>
+								
+										</div>
+		  
+								</details>
+  							</div>
+						</div>	
+						
+					</div>
+					
+				<!-- main2 dropdown -->
+				<h2 class="acc_trigger"><a href="#">2013-2014</a></h2>
+				<!-- container -->
+					<div class="acc_container">
+					<!-- event1 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">Toronto VRC Qualifying Event</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/T_com_vex.jpg"  alt=""></div>
+										<div class="col-sm-6" >
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>was the first VEX tournament the Warriors A attended</dd>
+											  <dt>location:</dt>
+											  <dd>Sir willain morluc S.S. NewMarket, ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>fought hard and made it to quarter finals</dd>
+											  <dt>Teams that attended:</dt>
+											  <dd>4659 Warriors A</dd>
+											</dl>
+										</div>
+								
+										</div>
+		  
+								</details>
+  							</div>
+						</div>
+						<!-- event2 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">NewMarket VRC Qualifying Event</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/T_com_vex.jpg"  alt=""></div>
+										<div class="col-sm-6" >
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>was the first VEX tournament the Warriors A attended</dd>
+											  <dt>location:</dt>
+											  <dd>Sir willain morluc S.S. NewMarket, ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>fought hard and made it to quarter finals</dd>
+											  <dt>Teams that attended:</dt>
+											  <dd>4659 Warriors A</dd>
+											</dl>
+										</div>
+								
+									</div>
+		  
+								</details>
+  							</div>
+						</div>
+						
+							<!-- event3 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">Skills Port credit Qualifying Event</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/robotgroup3.jpg"  alt=""></div>
+										<div class="col-sm-6" >
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>port credit internal qualifiers for skills robotic  </dd>
+											  <dt>location:</dt>
+											  <dd>Portcredit S.S., ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>winner of the event Skills team A: Robot Thor</dd>
+											  <dt>Teams that attended:</dt>
+											  <dd> Skills team A</dd>
+											  <dd> Skills team B</dd>
+											</dl>
+										</div>
+								
+									</div>
+		  
+								</details>
+  							</div>
+						</div>
+						
+							<!-- event4 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">St. Catherines VRC Qualifying Event</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/T_com_vex.jpg"  alt=""></div>
+										<div class="col-sm-6" >
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>VEX Qualifiers  </dd>
+											  <dt>location:</dt>
+											  <dd>St. Catherines, ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>n/a</dd>
+											  <dt>Teams that attended:</dt>
+											  <dd>Warriors A</dd>
+											</dl>
+										</div>
+								
+									</div>
+		  
+								</details>
+  							</div>
+						</div>
+						
+							<!-- event5 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">Rick Hansen VRC Qualifying Event</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/R_com_vex.jpg"  alt=""></div>
+										<div class="col-sm-6">
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>VEX Qualifiers  </dd>
+											  <dt>location:</dt>
+											  <dd>Rick Hansen S.S., ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>n/a</dd>
+											  <dt>Teams that attended:</dt>
+											  <dd>Warriors A</dd>
+											  <dd>Warriors B</dd>
+											  <dd>Warriors C</dd>
+											  <dd>Warriors D</dd>
+											</dl>
+										</div>
+								
+									</div>
+		  
+								</details>
+  							</div>
+						</div>
+						
+						<!-- event6 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">Skills Peel competition</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/T_com_vex.jpg"  alt=""></div>
+										<div class="col-sm-6" >
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>Skills team A particepated aginset 12 other teams at the Peel Skills competition  </dd>
+											  <dt>location:</dt>
+											  <dd>N/A, ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>fought hard but where knocked out by their pupil team Turner Fonter in the semi-finals  </dd>
+											  <dt>Teams that attended:</dt>
+											  <dd> skills team A</dd>
+											</dl>
+										</div>
+								
+									</div>
+		  
+								</details>
+  							</div>
+						</div>
+						
+						
+				<!-- main2 dropdown end -->
+					</div>
+					
+					
+					
+					
+				<!-- main3 dropdown -->
+				<h2 class="acc_trigger"><a href="#">2012-2013</a></h2>
+					<div class="acc_container">
+						<!-- event1 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">Toronto VRC Qualifying Event</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/T_com_vex.jpg"  alt=""></div>
+										<div class="col-sm-6" >
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>was the first VEX tournament the Warriors A attended</dd>
+											  <dt>location:</dt>
+											  <dd>Sir willain morluc S.S. NewMarket, ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>fought hard and made it to quarter finals</dd>
+											  <dt>Teams that attended:</dt>
+											  <dd>4659 Warriors A</dd>
+											</dl>
+										</div>
+								
+										</div>
+		  
+								</details>
+  							</div>
+						</div>
+						<!-- event2 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">NewMarket VRC Qualifying Event</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/T_com_vex.jpg"  alt=""></div>
+										<div class="col-sm-6" >
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>was the first VEX tournament the Warriors A attended</dd>
+											  <dt>location:</dt>
+											  <dd>Sir willain morluc S.S. NewMarket, ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>fought hard and made it to quarter finals</dd>
+											  <dt>Teams that attended:</dt>
+											  <dd>4659 Warriors A</dd>
+											</dl>
+										</div>
+								
+									</div>
+		  
+								</details>
+  							</div>
+						</div>
+						
+							<!-- event3 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">Skills Port credit Qualifying Event</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/robotgroup3.jpg"  alt=""></div>
+										<div class="col-sm-6" >
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>port credit internal qualifiers for skills robotic  </dd>
+											  <dt>location:</dt>
+											  <dd>Portcredit S.S., ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>winner of the event Skills team A: Robot Thor</dd>
+											  <dt>Teams that attended:</dt>
+											  <dd> Skills team A</dd>
+											  <dd> Skills team B</dd>
+											</dl>
+										</div>
+								
+									</div>
+		  
+								</details>
+  							</div>
+						</div>
+						
+							<!-- event4 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">St. Catherines VRC Qualifying Event</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/T_com_vex.jpg"  alt=""></div>
+										<div class="col-sm-6" >
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>VEX Qualifiers  </dd>
+											  <dt>location:</dt>
+											  <dd>St. Catherines, ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>n/a</dd>
+											  <dt>Teams that attended:</dt>
+											  <dd>Warriors A</dd>
+											</dl>
+										</div>
+								
+									</div>
+		  
+								</details>
+  							</div>
+						</div>
+						
+							<!-- event5 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">Rick Hansen VRC Qualifying Event</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/R_com_vex.jpg"  alt=""></div>
+										<div class="col-sm-6">
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>VEX Qualifiers  </dd>
+											  <dt>location:</dt>
+											  <dd>Rick Hansen S.S., ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>n/a</dd>
+											  <dt>Teams that attended:</dt>
+											  <dd>Warriors A</dd>
+											  <dd>Warriors B</dd>
+											  <dd>Warriors C</dd>
+											  <dd>Warriors D</dd>
+											</dl>
+										</div>
+								
+									</div>
+		  
+								</details>
+  							</div>
+						</div>
+						
+						<!-- event6 dropdown -->
+						<div class="row">
+							<div class="col-lg-12">
+								<details class="main">
+								<summary class="main">Skills Peel competition</summary>
+									<div class="row"> 
+										<div class="col-sm-12" ></div>
+										<div class="col-sm-6" > <img class="img-responsive " src="pic/T_com_vex.jpg"  alt=""></div>
+										<div class="col-sm-6" >
+								
+											<dl>
+											  <dt>Event Info:</dt>
+											  <dd>Skills team A particepated aginset 12 other teams at the Peel Skills competition  </dd>
+											  <dt>location:</dt>
+											  <dd>N/A, ontriao Canada  </dd>
+											  <dt>Achievements:</dt>
+											  <dd>fought hard but where knocked out by their pupil team Turner Fonter in the semi-finals  </dd>
+											  <dt>Teams that attended:</dt>
+											  <dd> skills team A</dd>
+											</dl>
+										</div>
+								
+									</div>
+		  
+								</details>
+  							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+			
+		  
+        
+        
+        
+
+        <hr>
+
+<?php
+include_once('footer.html');
+?>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+
+<html>
+
+  <head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="lib/jsqrcode-combined.min.js"></script>
+	<script src="src/html5-qrcode.js"></script>
+	<script src="lib/html5-qrcode.min.js"></script>
+	
+	<script type="text/javascript" src="https://raw.github.com/EddieLa/BarcodeReader/master/src/DecoderWorker.js"></script>
+
+    
+	<title>QR code Reader</title>
+  </head>
+
+  <body>
+ 
+					<h3 class="center">QR code Reader</h3>
+
+						<div id="reader" style="width:300px;height:250px;"></div>	
+
+						<h6 class="center">Result</h6>
+
+						<span id="read" class="center" ></span>
+
+						<form id="contact-form" >
+						 <input type="text" id="sutdent_num" name="sutdent_num" value="" placeholder="484467" required="required" autofocus="autofocus" autocomplete="off" />
+						</form>
+
+
+
+
+<script> 
+		$(document).ready(function(){
+	$('#reader').html5_qrcode(function(data){
+			
+			document.getElementById("sutdent_num").value = (data);
+			var audio = new Audio('beep.mp3');
+			audio.play();
+		},
+		
+		function(error){
+			$('#read_error').html(error);
+		}, function(videoError){
+			$('#vid_error').html(videoError);
+		}
+			
+	);
+});
+</script>
+  </body>
+</html>
